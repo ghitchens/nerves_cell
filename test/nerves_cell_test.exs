@@ -1,6 +1,6 @@
-defmodule NervesCellTest do
+defmodule Nerves.Cell.Test do
   use ExUnit.Case
-  doctest NervesCell
+  doctest Nerves.Cell
 
   test "the truth" do
     assert 1 + 1 == 2

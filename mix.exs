@@ -1,4 +1,4 @@
-defmodule NervesCell.Mixfile do
+defmodule Nerves.Cell.Mixfile do
   use Mix.Project
 
   def project do
@@ -11,14 +11,18 @@ defmodule NervesCell.Mixfile do
   end
 
   def application, do: [
-    pplications: [:logger],
-    mod: {NervesCell, []}
+    applications: [
+      :logger,
+      :nerves_firmware,
+      :nerves_networking,
+      :nerves_ssdp_server
+    ],
+    mod: {Nerves.Cell, []}
   ]
 
   defp deps, do: [
-    {:nerves_networking, github: "nerves_project/nerves_networking"},
-    {:nerves_ssdp_server, github: "nerves_project/nerves_ssdp_server"},
-    {:nerves_firmware, github: "ghitchens/nerves_firmware"}
+    {:nerves_firmware, github: "ghitchens/nerves_firmware"},
+    {:nerves_networking, github: "nerves-project/nerves_networking"},
+    {:nerves_ssdp_server, github: "nerves-project/nerves_ssdp_server"},
   ]
-
 end
