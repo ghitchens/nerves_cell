@@ -1,0 +1,10 @@
+%{"cowboy": {:hex, :cowboy, "1.0.4", "a324a8df9f2316c833a470d918aaf73ae894278b8aa6226ce7a9bf699388f878", [:rebar, :make], [{:cowlib, "~> 1.0.0", [hex: :cowlib, optional: false]}, {:ranch, "~> 1.0", [hex: :ranch, optional: false]}]},
+  "cowlib": {:hex, :cowlib, "1.0.2", "9d769a1d062c9c3ac753096f868ca121e2730b9a377de23dec0f7e08b1df84ee", [:make], []},
+  "exjsx": {:hex, :exjsx, "3.2.0", "7136cc739ace295fc74c378f33699e5145bead4fdc1b4799822d0287489136fb", [:mix], [{:jsx, "~> 2.6.2", [hex: :jsx, optional: false]}]},
+  "jsx": {:hex, :jsx, "2.6.2", "213721e058da0587a4bce3cc8a00ff6684ced229c8f9223245c6ff2c88fbaa5a", [:mix, :rebar], []},
+  "nerves_firmware": {:git, "https://github.com/nerves-project/nerves_firmware.git", "963d772e535180c42006ce44bb61432d09f52a76", []},
+  "nerves_firmware_http": {:git, "https://github.com/nerves-project/nerves_firmware_http.git", "eb25f9247c6d8f3423779b4952fdda5060d0cc7e", []},
+  "nerves_networking": {:git, "https://github.com/nerves-project/nerves_networking.git", "bdf2082eef937982f4bb4db403ffb15945134e99", []},
+  "nerves_ssdp_client": {:git, "https://github.com/nerves-project/nerves_ssdp_client.git", "92650f30cbbeb7c60476b883c0d2f26687be6edd", []},
+  "nerves_ssdp_server": {:git, "https://github.com/nerves-project/nerves_ssdp_server.git", "87a8ce143c1b7e506d563672d9584712fb2a40e7", []},
+  "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []}}
