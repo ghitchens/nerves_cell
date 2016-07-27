@@ -9,7 +9,7 @@ defmodule Nerves.Cell do
       "cache-control": "max-age=1800"
   ]
 
-  @cell_ssdp_st "nerves-project-org:service:cell:1"
+  @cell_ssdp_st "urn:nerves-project-org:service:cell:1"
   @cell_ssdp_server "Nerves"
   @cell_ssdp_location "/_cell/"
 
