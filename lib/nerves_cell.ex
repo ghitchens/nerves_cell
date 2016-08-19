@@ -9,10 +9,6 @@ defmodule Nerves.Cell do
       "cache-control": "max-age=1800"
   ]
 
-  @cell_ssdp_st "urn:nerves-project-org:service:cell:1"
-  @cell_ssdp_server "Nerves"
-  @cell_ssdp_location "/_cell/"
-
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
@@ -25,27 +21,32 @@ defmodule Nerves.Cell do
     Supervisor.start_link(children, opts)
   end
 
+  @cell_ssdp_st "urn:nerves-project-org:service:cell:1"
+  @cell_ssdp_server "Nerves"
+  @cell_ssdp_location "/_cell/"
+
   def setup() do
     Logger.info "setting up cell"
-#    Nerves.Networking.setup
-#    Nerves.SSDPServer.start
-    Nerves.SSDPServer.publish ssdp_usn(), @cell_ssdp_st, ssdp_fields()
+    config = Mix.Project.config
+    Nerves.SSDPServer.publish usn(config), @cell_ssdp_st, fields(config)
   end
 
-  defp ssdp_usn() do
-    "uuid:#{boardid}"
+  defp fields(config) do
+    [ "Server":             @cell_ssdp_server,
+      "Location":           @cell_ssdp_location,
+      "X-Id":               id(),
+      "X-Version":          config[:version],
+      "X-Platform":         platform(config),
+      "X-Creation-Date":    config[:creation_date],
+      "X-Firmware-Stream":  config[:firmware_stream],
+      "X-Tags":             config[:tags] ]
   end
 
-  defp boardid,  do: "nerves-2023F8"
-
-  defp cell_id, do: boardid()
-
-  defp ssdp_fields() do
-    [
-      server:  @cell_ssdp_server,
-      location: @cell_ssdp_location,
-      cellid: cell_id()
-    ]
+  defp usn(config) do
+    "uuid:#{id}::#{platform(config)}"
   end
+
+  defp platform(config), do: config[:platform] || config[:app]
+  defp id, do: "2023F8"
 
 end

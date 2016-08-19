@@ -1,13 +1,13 @@
 defmodule Nerves.Cell.Mixfile do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.2.0-dev"
 
   def project do
     [ app: :nerves_cell,
       name: "nerves_cell",
       version: @version,
-      elixir: "~> 1.2",
+      elixir: "~> 1.3",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -34,12 +34,10 @@ defmodule Nerves.Cell.Mixfile do
        extras: [ "README.md", "CHANGELOG.md"] ]
    end
 
-
    defp package do
      [ maintainers: ["Garth Hitchens"],
        licenses: ["Apache-2.0"],
        links: %{github: "https://github.com/nerves-project/cell"},
        files: ~w(lib config) ++ ~w(README.md CHANGELOG.md LICENSE mix.exs) ]
    end
-
 end
