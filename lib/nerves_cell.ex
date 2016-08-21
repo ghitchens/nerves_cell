@@ -36,17 +36,24 @@ defmodule Nerves.Cell do
       "Location":           @cell_ssdp_location,
       "X-Id":               id(),
       "X-Version":          config[:version],
-      "X-Platform":         platform(config),
-      "X-Creation-Date":    config[:creation_date],
-      "X-Firmware-Stream":  config[:firmware_stream],
-      "X-Tags":             config[:tags] ]
+      "X-Firmware-Stream":  config[:firmware_stream] ]
+     |> field(:"X-Platform", platform(config))
+     |> field(:"X-Tags", config[:tags])
+     |> field(:"X-Creation-Date", config[:creation_date], &DateTime.to_iso8601/1)
   end
 
-  defp usn(config) do
-    "uuid:#{id}::#{platform(config)}"
+  # if value truthy, add field with value optionally transformed by fn
+  @spec field(Keyword.t, atom, term, function) :: Keyword.t
+  defp field(fields, key, val, f \\ &(&1)) do
+    if (val) do
+      Keyword.put fields, key, f.(val)
+    else
+      fields
+    end
   end
 
   defp platform(config), do: config[:platform] || config[:app]
+  defp usn(config), do: "uuid:#{id}::#{platform(config)}"
   defp id, do: "2023F8"
 
 end
