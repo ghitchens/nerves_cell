@@ -4,6 +4,8 @@
 
 - improved tests
 - connect to board_id
+- change to referencing packages from hex where appropriate
+- move to elixir 1.3
 
 ## v0.1.0
 

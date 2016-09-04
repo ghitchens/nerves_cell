@@ -1,13 +1,13 @@
 defmodule Nerves.Cell.Mixfile do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.1.1-dev"
 
   def project do
     [ app: :nerves_cell,
       name: "nerves_cell",
       version: @version,
-      elixir: "~> 1.2",
+      elixir: "~> 1.3",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -22,9 +22,9 @@ defmodule Nerves.Cell.Mixfile do
 
   defp deps do
     [ {:nerves_firmware_http, github: "nerves-project/nerves_firmware_http"},
-      {:nerves_networking, github: "nerves-project/nerves_networking"},
-      {:nerves_ssdp_server, github: "nerves-project/nerves_ssdp_server"},
-      {:nerves_ssdp_client, github: "nerves-project/nerves_ssdp_client", only: :test} ]
+      {:nerves_networking, "~> 0.6.0"},
+      {:nerves_ssdp_server, "~> 0.2.1"},
+      {:nerves_ssdp_client, "~> 0.1.3", only: :test} ]
    end
 
    defp docs do
