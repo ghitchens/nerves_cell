@@ -1,7 +1,7 @@
 defmodule Nerves.Cell.Mixfile do
   use Mix.Project
 
-  @version "0.1.1-dev"
+    @version "0.2.0-dev"
 
   def project do
     [ app: :nerves_cell,
@@ -34,12 +34,10 @@ defmodule Nerves.Cell.Mixfile do
        extras: [ "README.md", "CHANGELOG.md"] ]
    end
 
-
    defp package do
      [ maintainers: ["Garth Hitchens"],
        licenses: ["Apache-2.0"],
        links: %{github: "https://github.com/nerves-project/cell"},
        files: ~w(lib config) ++ ~w(README.md CHANGELOG.md LICENSE mix.exs) ]
    end
-
 end

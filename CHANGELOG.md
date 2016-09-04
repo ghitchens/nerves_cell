@@ -1,6 +1,11 @@
 #Changelog
 
-## v0.1.1-dev
+## v0.2.0-dev
+
+- updated metadata model entirely
+- elixir 1.3 dependency
+
+## v0.1.1
 
 - improved tests
 - connect to board_id
