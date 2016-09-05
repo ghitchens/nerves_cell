@@ -28,8 +28,9 @@ defmodule Nerves.Cell do
   @cell_ssdp_location "/_cell/"
 
   def setup() do
+    config = Application.get_all_env(:nerves_cell)
     Logger.info "setting up cell"
-    Nerves.SSDPServer.publish usn(@project), @cell_ssdp_st, fields(@project)
+    Nerves.SSDPServer.publish usn(config), @cell_ssdp_st, fields(config)
   end
 
   defp fields(config) do
