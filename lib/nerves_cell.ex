@@ -3,6 +3,8 @@ defmodule Nerves.Cell do
   use Application
   require Logger
 
+  @project Mix.Project.config
+
   @ssdp_fields [
       location: "http://localhost:3000/myservice.json",
       server: "MyServerName",
@@ -27,8 +29,7 @@ defmodule Nerves.Cell do
 
   def setup() do
     Logger.info "setting up cell"
-    config = Mix.Project.config
-    Nerves.SSDPServer.publish usn(config), @cell_ssdp_st, fields(config)
+    Nerves.SSDPServer.publish usn(@project), @cell_ssdp_st, fields(@project)
   end
 
   defp fields(config) do
