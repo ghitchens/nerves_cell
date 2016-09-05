@@ -34,7 +34,7 @@ defmodule Nerves.Cell do
   defp fields(config) do
     [ "Server":             @cell_ssdp_server,
       "Location":           @cell_ssdp_location,
-      "X-Id":               id(),
+      "X-Id":               board_id(),
       "X-Version":          config[:version],
       "X-Firmware-Stream":  config[:firmware_stream] ]
      |> field(:"X-Platform", platform(config))
@@ -53,7 +53,16 @@ defmodule Nerves.Cell do
   end
 
   defp platform(config), do: config[:platform] || config[:app]
-  defp usn(config), do: "uuid:#{id}::#{platform(config)}"
-  defp id, do: "2023F8"
+  defp usn(config), do: "uuid:#{board_id()}::#{platform(config)}"
+
+  # return a board ID, or "unknown" if the board ID cannot be generated
+  # REVIEW TODO cache in ets, move to library, handle other board types better
+  defp board_id do
+    try do
+      System.cmd "boardid", ["-n", "6"]
+    rescue
+      _ in ErlangError -> "unknown"
+    end
+  end
 
 end

@@ -9,7 +9,7 @@ defmodule Nerves.Cell.Test do
     responses = Nerves.SSDPClient.discover target: @cell_st
     assert is_map(responses)
     # Enum.each responses, fn {urn, params} ->
-    #   IO.write "#{urn}\t#{inspect params}\n" 
+    #   IO.write "#{urn}\t#{inspect params}\n"
     # end
   end
 
