@@ -41,7 +41,8 @@ defmodule Nerves.Cell do
       "X-Firmware-Stream":  config[:firmware_stream] ]
      |> field(:"X-Platform", platform(config))
      |> field(:"X-Tags", config[:tags])
-     |> field(:"X-Node-Id", node_id())
+     |> field(:"X-Target", config[:target])
+     |> field(:"X-Node", node_name())
      |> field(:"X-Creation-Date", config[:creation_date], &DateTime.to_iso8601/1)
   end
 
@@ -70,7 +71,7 @@ defmodule Nerves.Cell do
   end
 
   # return a node id as a string if valid, else nil
-  defp node_id do
+  defp node_name do
     if Node.alive? do
       Node.self
       |> Atom.to_string
