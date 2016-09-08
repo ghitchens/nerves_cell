@@ -41,6 +41,7 @@ defmodule Nerves.Cell do
       "X-Firmware-Stream":  config[:firmware_stream] ]
      |> field(:"X-Platform", platform(config))
      |> field(:"X-Tags", config[:tags])
+     |> field(:"X-Node-Id", node_id())
      |> field(:"X-Creation-Date", config[:creation_date], &DateTime.to_iso8601/1)
   end
 
@@ -65,6 +66,16 @@ defmodule Nerves.Cell do
       String.strip(raw_id)
     rescue
       _ in ErlangError -> nil
+    end
+  end
+
+  # return a node id as a string if valid, else nil
+  defp node_id do
+    if Node.alive? do
+      Node.self
+      |> Atom.to_string
+    else
+      nil
     end
   end
 
