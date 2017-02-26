@@ -1,6 +1,11 @@
 #Changelog
 
-## v0.2.0-dev
+## v0.2.1-dev
+
+- removed unneeded dependency on nerves_networking
+- elixir 1.4 dependency and removal of warnings
+ 
+## v0.2.0
 
 - updated metadata model entirely
 - elixir 1.3 dependency

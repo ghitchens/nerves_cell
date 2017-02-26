@@ -1,10 +1,10 @@
-%{"cowboy": {:hex, :cowboy, "1.0.4", "a324a8df9f2316c833a470d918aaf73ae894278b8aa6226ce7a9bf699388f878", [:rebar, :make], [{:cowlib, "~> 1.0.0", [hex: :cowlib, optional: false]}, {:ranch, "~> 1.0", [hex: :ranch, optional: false]}]},
+%{"cowboy": {:hex, :cowboy, "1.1.2", "61ac29ea970389a88eca5a65601460162d370a70018afe6f949a29dca91f3bb0", [:rebar3], [{:cowlib, "~> 1.0.2", [hex: :cowlib, optional: false]}, {:ranch, "~> 1.3.2", [hex: :ranch, optional: false]}]},
   "cowlib": {:hex, :cowlib, "1.0.2", "9d769a1d062c9c3ac753096f868ca121e2730b9a377de23dec0f7e08b1df84ee", [:make], []},
-  "exjsx": {:hex, :exjsx, "3.2.0", "7136cc739ace295fc74c378f33699e5145bead4fdc1b4799822d0287489136fb", [:mix], [{:jsx, "~> 2.6.2", [hex: :jsx, optional: false]}]},
-  "jsx": {:hex, :jsx, "2.6.2", "213721e058da0587a4bce3cc8a00ff6684ced229c8f9223245c6ff2c88fbaa5a", [:mix, :rebar], []},
-  "nerves_firmware": {:git, "https://github.com/nerves-project/nerves_firmware.git", "241a12694bd3bc2b4df8cbb7e0f0beaeff075b1c", []},
-  "nerves_firmware_http": {:git, "https://github.com/nerves-project/nerves_firmware_http.git", "cc2cb110b0587a482d454175916dc597d62c4bfa", []},
+  "exjsx": {:hex, :exjsx, "3.2.1", "1bc5bf1e4fd249104178f0885030bcd75a4526f4d2a1e976f4b428d347614f0f", [:mix], [{:jsx, "~> 2.8.0", [hex: :jsx, optional: false]}]},
+  "jsx": {:hex, :jsx, "2.8.2", "7acc7d785b5abe8a6e9adbde926a24e481f29956dd8b4df49e3e4e7bcc92a018", [:mix, :rebar3], []},
+  "nerves_firmware": {:git, "https://github.com/nerves-project/nerves_firmware.git", "b783df3867c82dc0abe6770079077a6f922c00a9", []},
+  "nerves_firmware_http": {:git, "https://github.com/nerves-project/nerves_firmware_http.git", "d8206a58ba7184bd8419080fc51d13543af705ca", []},
   "nerves_networking": {:hex, :nerves_networking, "0.6.0", "6de5fc53951d087c8c61ce4ba74b998313e628ff084cd02c9813eb63a79c647f", [:mix], []},
   "nerves_ssdp_client": {:hex, :nerves_ssdp_client, "0.1.3", "b09dc7433b2536399885a5f0fcd1fb58283115b075f9485f86fa713547d404dc", [:mix], []},
-  "nerves_ssdp_server": {:hex, :nerves_ssdp_server, "0.2.1", "2d010552023fc1a724e8cb5c92479a58552976e6f805b6dbf09babd31f923b8f", [:mix], []},
-  "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []}}
+  "nerves_ssdp_server": {:hex, :nerves_ssdp_server, "0.2.2", "30988caf00a175285a238fff83feccb1f662b9ac4fcc68805b2e9cc01dcf1ad8", [:mix], []},
+  "ranch": {:hex, :ranch, "1.3.2", "e4965a144dc9fbe70e5c077c65e73c57165416a901bd02ea899cfd95aa890986", [:rebar3], []}}
