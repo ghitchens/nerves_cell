@@ -3,14 +3,6 @@ defmodule Nerves.Cell do
   use Application
   require Logger
 
-  @project Mix.Project.config
-
-  @ssdp_fields [
-      location: "http://localhost:3000/myservice.json",
-      server: "MyServerName",
-      "cache-control": "max-age=1800"
-  ]
-
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
