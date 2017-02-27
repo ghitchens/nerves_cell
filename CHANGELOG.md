@@ -1,10 +1,16 @@
 #Changelog
 
-## v0.2.1-dev
+
+## v0.2.2-dev
+
+- deps now reference nerves_firmware_http package
+
+## v0.2.1
 
 - removed unneeded dependency on nerves_networking
 - elixir 1.4 dependency and removal of warnings
- 
+- cleaned up mixfile
+
 ## v0.2.0
 
 - updated metadata model entirely
