@@ -17,7 +17,7 @@ service discovery architecture comes into play.
 
 For now, the primary objective of this module is to enable discovery,
 management and update of devices on a local area network by using the `cell`
-[command line tool](https://github.com/nerves-project/nerves_cli_cell).
+[command line tool](https://github.com/nerves-project/cell-tool/).
 
 ## Installation & Use
 
