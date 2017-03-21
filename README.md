@@ -21,16 +21,17 @@ management and update of devices on a local area network by using the `cell`
 
 ## Installation & Use
 
-Since the package is not yet available in hex:
+Since the package is not yet available in hex, add `nerves_cell` to your dependencies in `mix.exs`:
 
-  1. Add nerves_cell to your list of dependencies in `mix.exs`:
+```elixir
+def deps do
+  [{:nerves_cell, github: "ghitchens/nerves_cell"}]
+end
+```
 
-        def deps do
-          [{:nerves_cell, github: "nerves-project/nerves_cell"}]
-        end
+Then somewhere in your application when you know that networking is available, start `nerves_cell` up by calling:
 
-  2. Ensure nerves_cell is started before your application:
+```elixir
+Nerves.Cell.setup()
+```
 
-        def application do
-          [applications: [:nerves_cell]]
-        end
